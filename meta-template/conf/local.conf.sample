@@ -1,0 +1,37 @@
+# ------------------------------------------------------------------------------
+# Target platform
+# ------------------------------------------------------------------------------
+MACHINE = "raspberrypi4-64"
+DISTRO = "poky"
+
+# ------------------------------------------------------------------------------
+# System configuration
+# ------------------------------------------------------------------------------
+INIT_MANAGER = "systemd"
+PACKAGE_CLASSES = "package_ipk"
+
+# ------------------------------------------------------------------------------
+# Image features and installed packages
+# ------------------------------------------------------------------------------
+EXTRA_IMAGE_FEATURES:append = " debug-tweaks ssh-server-openssh package-management"
+IMAGE_INSTALL:append = " \
+    opkg \
+    uhubctl \
+    usbutils \
+    connman \
+    connman-client \
+    python3 \
+    vim \
+    "
+# ------------------------------------------------------------------------------
+# Hardware configuration for meta-raspberrypi
+# ------------------------------------------------------------------------------
+ENABLE_UART = "1"
+
+# ------------------------------------------------------------------------------
+# Build Cache
+# ------------------------------------------------------------------------------
+DL_DIR     ?= "${HOME}/rpi4-yocto-cache/downloads"
+SSTATE_DIR ?= "${HOME}/rpi4-yocto-cache/sstate-cache"
+# Optional: Clean work and downloads directories after build
+# INHERIT += "rm_work_and_downloads"

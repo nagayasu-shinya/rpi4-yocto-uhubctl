@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!--
+    Development manifest: All kirkstone branches
+    After successful build, create fixed version with commit hashes
+  -->
+  <default revision="refs/heads/kirkstone"/>
+
+  <remote name="yocto" fetch="https://git.yoctoproject.org"/>
+  <remote name="openembedded" fetch="https://git.openembedded.org"/>
+  <remote name="rpi" fetch="https://github.com/agherzan"/>
+
+  <project name="poky" path="poky" remote="yocto"/>
+  <project name="meta-openembedded" path="meta-openembedded" remote="openembedded"/>
+  <project name="meta-raspberrypi" path="meta-raspberrypi" remote="rpi"/>
+</manifest>
