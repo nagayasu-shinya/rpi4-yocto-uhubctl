@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="openembedded" fetch="https://git.openembedded.org"/>
+  <remote name="rpi" fetch="https://github.com/agherzan"/>
+  <remote name="yocto" fetch="https://git.yoctoproject.org"/>
+  
+  <default revision="refs/heads/kirkstone"/>
+  
+  <project name="meta-openembedded" remote="openembedded" revision="5c138125018fef4b240e62b664a809d19f4b26a5" upstream="refs/heads/kirkstone" dest-branch="refs/heads/kirkstone"/>
+  <project name="meta-raspberrypi" remote="rpi" revision="255500dd9f6a01a3445ac491d1abc401801e3bad" upstream="refs/heads/kirkstone" dest-branch="refs/heads/kirkstone"/>
+  <project name="poky" remote="yocto" revision="51dc9c464de0703bfbc6f1ee71ac9bea20933a45" upstream="refs/heads/kirkstone" dest-branch="refs/heads/kirkstone"/>
+</manifest>
